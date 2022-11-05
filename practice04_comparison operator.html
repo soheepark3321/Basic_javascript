@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 01</title>
+    <link href="practice01.js">
+</head>
+<body>
+    <script type="text/javascript">
+
+        /*
+        ==
+        서로 값이 같다면 true, 다르다면 false
+        비슷하면 같은 것으로 취급
+        -> 버그 발생시키기 쉬운 환경
+        ex. alert(1==2);의 결과값 : false
+        ex. alert(1 == "1");의 결과값 : true
+        ex. alert(undefined == null); : ture
+
+        ===
+        일치 연산자 (strict equal operator)
+        좌항과 우항이 정확하게 같을 때 true, 다르면 false
+        굉장히 프로그램이 복잡하고 정확해야 할 때 사용
+        ex. alert(1 === "1");의 결과값 : false
+        ex. alert(undefined === null); : false
+         */
+
+         /*
+         1 : true
+         1이 아닌 수 : false
+
+         alert(true == 1); : true
+         alert(true === 1); : false
+
+         alert(true == '1'); : true
+         alert(true === '1'); : false
+
+         alert(0 === -0); : true
+
+         alert(NaN === NaN); : false
+         -> 0/0 : 0을 0으로 나눴을 때 성립하지 않는 수를 NaN으로 정의
+         'NaN은 계산할 수 없음' 이므로 false
+         */
+
+         /*
+         !
+         부정
+
+         !=
+         같지 않다 (==와 정반대의 결과)
+         ex. alert(1 != 2); : true
+
+         !==
+         정확하게 같지 않다
+         */
+
+         /*
+         >, <
+         ex. alert(10 > 20); : false
+
+         >=, <=
+         크거나 같다.
+         ex. alert(10 >= 20); : false
+         ex. alert(10 >= 1); : true
+         */
+
+    </script>
+</body>
+
+</html>
