@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="practice01.js">
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        /*
+        함수 function
+        
+        function 함수명 ( [인자...[,인자]] ) {
+            코드
+            return 반환값
+        }
+        */
+
+        /*
+        function numbering() {
+            document.write(1);
+        } //함수 정의
+        
+        numbering(); //()가 있기 때문에 함수로 인식
+        */
+
+        /*
+        function numbering() {
+            i = 0;
+            while (i < 10){
+                document.write(1);
+                i += 1; //10보다 작을 때까지 1씩 증가
+            }
+        } //함수 정의
+        
+        numbering(); 
+        */
+
+        /*
+        function get_member1() {
+            return 'egoing';
+        }
+
+        function get_member2() {
+            return 'k8805';
+        }
+
+        alert(get_member1());
+        alert(get_member2());
+        */
+
+        /*
+        function get_member1(){
+            return 'egoing';
+            return 'leezche';
+            return 'graphittie';
+        }
+
+        alert(get_member1());
+        -> 'egoing'만 실행됨
+        -> return 'egoing' 출력 후 함수 종료되기 때문
+        */
+
+        /*
+        function get_argument(arg){ //arg : 변수
+            return arg;
+        }
+
+        alert(get_argument(1)); //'arg = 1'
+        alert(get_argument(2)); //'arg = 2'
+        -> result : 1
+           result : 2
+           */
+
+        /*
+        function get_argument(arg) { //arg : 매개변수 (parameter)
+            return arg * 1000; //return : 출력
+        }
+
+        alert(get_argument(1)); //'arg = 1' //인자 (argument) //입력
+        alert(get_argument(2)); //'arg = 2' //인자 (argument) //입력
+        -> result : 1000
+            result : 2000
+            */
+
+
+        /*
+        function get_arguments(arg1, arg2) { //arg : 변수
+            return arg1 + arg2;
+        }
+
+        alert(get_arguments(10, 20));
+        alert(get_arguments(20, 30));
+        -> result : 30
+            result : 50
+            */
+
+        /*
+        (함수 다르게 표기)
+        numbering = function() {
+            i = 0;
+            while(i < 10) {
+                document.write(i);
+                i += 1;
+            }
+        }
+
+        numbering();
+        -> result : 0123456789
+        */
+
+        /*
+        익명 함수 : 일회성 호출 시 사용
+
+        (function() {
+            i = 0;
+            while(i < 10) {
+                document.write(i);
+                i += 1;
+            }
+        }) (); //(); 호출 기호
+        -> 함수 바로 정의 및 바로 호출
+        */
+
+    </script>
+</body>
+
+</html>
