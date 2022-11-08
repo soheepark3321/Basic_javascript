@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="practice01.js">
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        /*
+        var member = ['egoing', 'k8805', 'sorialgi']
+        alert(member);
+
+        result : egoing,k8805,sorialgi
+
+        ------
+
+        var member = ['egoing', 'k8805', 'sorialgi']
+        alert(member[0]);
+        alert(member[1]);
+        alert(member[2]);
+
+        result 1 : egoing
+        result 2 : k8805
+        result 3 : sorialgi
+        -> 원소들은 0부터 고유한 순서 번호를 갖게 됨
+        */
+
+        /*
+        function get_members(){
+            return ['egoing', 'k8805', 'sorialgi'];
+        }
+        var members = get_members();
+        document.write(members[0]);
+        document.write(members[1]);
+        document.write(members[2]);
+
+        -> result : egoingk8805sorialgi
+        */
+
+        /*
+        function get_members(){
+            return ['egoing', 'k8805', 'sorialgi'];
+        }
+        members = get_members();
+        //members.lengh는 배열에 담긴 값의 숫자 알려줌
+        for(i = 0; i < members.length; i++){
+            //members[i].toUpperCase()는 members[i]에 담긴 문자를 대문자로 변환해줌
+            document.write(members[i].toUpperCase());
+            document.write('<br .>');
+        }
+
+        -> result : EGOING
+                    K8805
+                    SORIALGI
+                    */
+
+        /*
+        function get_members(){
+            return ['egoing', 'k8805', 'sorialgi', 'leezche']
+        }
+
+        members = get_members();
+
+        document.write(members[0].toUpperCase()+"<br />");
+        document.write(members[1].toUpperCase()+"<br />");
+        document.write(members[2].toUpperCase()+"<br />");
+
+        -> result : EGOING
+                    K8805
+                    SORIALGI
+
+        ---------------
+        
+        배열 + 반복문
+        function get_members(){
+            return ['egoing', 'k8805', 'sorialgi']
+        }
+
+        members = get_members();
+
+        for(var i = 0; i < 3; i++) {
+            document.write(members[i].toUpperCase()+"<br />");
+        }
+        ----------------
+        function get_members() {
+            return ['egoing', 'k8805', 'sorialgi', 'leezche']
+        }
+
+        members = get_members();
+
+        for (var i = 0; i < members.length; i++) {
+            document.write(members[i].toUpperCase() + "<br />");
+        }
+                    */
+
+        /*
+        배열에 원소값 추가
+
+        var li = ['a', 'b', 'c', 'd', 'e'];
+        li.push('f');
+        alert(li);
+        -> result : a,b,c,d,e,f
+        -> 배열 li에 f를 추가(push)했기 때문
+
+        ------------------
+
+        var li = ['a', 'b', 'c', 'd', 'e'];
+        li = li.concat(['f', 'g']);
+        alert(li);
+        -> result : a,b,c,d,e,f,g
+        -> concat : 여러 개의 값 추가
+
+        ------------------
+
+        var li = ['a', 'b', 'c', 'd', 'e'];
+        li.unshift('z');
+        alert(li);
+        -> result : z,a,b,c,d,e
+        -> 배열 맨 앞쪽에 원소값 추가
+
+        ------------------
+
+        var li = ['a', 'b', 'c', 'd', 'e'];
+        li.splice(2, 0, 'B');
+        alert(li);
+        /*-> result : a,b,B,c,d,e
+        -> 배열의 중간에 원소값 넣기
+        -> array.splice(index, howmany, elementsN);
+        -> index : 배열에 추가할 특정 배열 위치
+        -> howmany : index에서부터 제거될 원소들의 수 (0이면 원소 삭제 안됨) -> index의 위치에서 우측으로 값이 삭제됨
+        -> elements : 추가 될 원소값 (여러개 입력 가능)
+        */
+
+    </script>
+</body>
+
+</html>
