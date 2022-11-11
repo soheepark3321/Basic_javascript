@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="practice01.js">
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        /*
+        객체 : 인덱스로 문자 사용
+ 
+        var grades = {'egoing' : 10, 'k8805' : 6};
+        egoing : key, 10 : value
+ 
+        -
+ 
+        var grades = {};
+        grades['egoing'] = 10;
+        grades['k8805'] = 6;
+ 
+        ->
+        grades['k8805']; //result : 6
+        grades.k8805; //result : 6
+        grades['k88'+'05']; //result : 6
+        */
+
+        /*
+        var grades = {'egoing' : 10, 'k8805' : 6, 'sorialgi' : 80};
+        for(key in grades) { //이때 key는 변수
+            document.write("key : "+key+" value : "+grades[key]+"<br />");
+        }
+ 
+        result : key : egoing value : 10
+                key : k8805 value : 6
+                key : sorialgi value : 80
+                */
+
+        /*
+
+        var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80 };
+        for (var name in grades) { //이때 key는 변수
+            document.write("<li>key : " + name + " value : " + grades[name] + "</li>");} 
+        
+        -
+
+        var grades = { //grades : 객체
+            'list' : {'egoing' : 10, 'k8805' : 8, 'sorialgi' : 80}, //list : 변수
+            'show' : function() {
+                alert('hello world');
+            }
+        }
+        alert(grades['show']());
+        
+        -
+
+        var grades = { //grades : 객체
+            'list' : {'egoing' : 10, 'k8805' : 8, 'sorialgi' : 80}, //list : 변수
+            'show' : function() {
+                alert(this.list); //this는 grades를 가리킴
+            }
+        }
+        alert(grades['show']());
+
+        -
+
+        var grades = { //grades : 객체
+            'list' : {'egoing' : 10, 'k8805' : 8, 'sorialgi' : 80}, //list : 변수
+            'show' : function() {
+                for(var name in this.list) {
+                    console.log(name, this.list[name]);
+                }
+                console.log(this.list);
+            }
+        }
+        grades.show();
+        //alert(grades['show']());
+        */
+
+        
+        
+
+    </script>
+
+
+
+</body>
+
+</html>
