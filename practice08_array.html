@@ -134,7 +134,79 @@
         -> index : 배열에 추가할 특정 배열 위치
         -> howmany : index에서부터 제거될 원소들의 수 (0이면 원소 삭제 안됨) -> index의 위치에서 우측으로 값이 삭제됨
         -> elements : 추가 될 원소값 (여러개 입력 가능)
+
+        -------------------
+
+        var numbers = [1,2,3,4,5,6,7,8,9,10];
+        alert(numbers.splice(2)); //result : 3,4,5,6,7,8,9,10 -> 시작점 2부터 배열 시작
+        alert(numbers); //result : 1,2 -> 원본이 수정된다.
+
+        --------------------
+
+        var numbers = [1,2,3,4,5,6,7,8,9,10];
+        alert(numbers.splice(2,4)); //result : 3,4,5,6 -> 시작점 2서부터 길이 4까지 출력
         */
+
+        /*
+        제거
+
+        var li = ['a', 'b', 'c', 'd', 'e'];
+        li.shift();
+        alert(li);
+        //result : b,c,d,e
+        //첫번째 원소인 'a' 제거되었음
+
+
+        var li = ['a', 'b', 'c', 'd', 'e'];
+        li.pop();
+        alert(li);
+        //result : a,b,c,d
+        //맨 마지막 원소인 'e' 제거되었음
+        */
+
+        /*
+        정렬
+
+        var li = ['c', 'e', 'a', 'b', 'd'];
+        li.sort();
+        alert(li);
+        //result : c,e,a,b,d
+
+        ------
+
+        역순으로 정렬
+
+        var li = ['c', 'e', 'a', 'b', 'd'];
+        li.reverse();
+        alert(li);
+        //result : d,b,a,e,c
+
+        --------
+
+        function sortNumber (a,b) {
+            //a-b=음수 : a < b, a-b=양수 : a > b, a-b=0 : 동일한 값
+            //sort 메소드는 return 값이 음수, 양수, 0인지에 따라 순서 정함
+            return a-b;
+        }
+
+        var numbers = [20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+        alert(numbers.sort(sortNumber));
+        //result : 1,2,3,4,5,6,7,8,9,10,20
+
+
+
+
+        function sortNumber(a,b) {
+            //a와 b의 순서 바꾸면 정렬순서가 반대가 됨
+            return b-a;
+        }
+        var numbers = [20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+        alert(numbers.sort(sortNumber));
+        //result : 20,10,9,8,7,6,5,4,3,2,1
+        //역순
+        */
+
+        
 
     </script>
 </body>
