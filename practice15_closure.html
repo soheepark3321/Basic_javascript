@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="practice10_module.js"></script>
+    <!--html 내에서 script 태그로 작성 안해도 js 파일을 따로 만들어 반영 가능-->
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        /*
+        클로저
+        : 내부함수가 외부함수의 맥락에 접근할 수 있는 것을 가르킴
+        자바스크립트를 이용한 고난이도 테크닉을 구사하는데 필수적인 개념으로 활용됨
+        */
+
+        /*
+        내부함수 : 함수 안 또 다른 함수 선언
+
+        function outter() {
+            function inner() { //내부함수
+                var title = 'coding everybody';
+                alert(title);
+            }
+            inner();
+        } outter();
+        //result : coding everybody
+        */
+
+        /*
+        function outter() {
+            var title = 'coding everybody'; //외부함수에 정의되어 있는 지역변수
+            function inner() { //내부함수
+                alert(title); //inner에서 title의 지역변수를 포함하지 않는다면 바깥쪽 함수에서 title이라는 변수를 찾게 됨
+            }
+            inner();
+        } outter();
+        //result : coding everybody
+        */
+
+        /*
+        function outter(){
+            var title = 'coding everybody';
+            return function(){
+                alert(title);
+            }
+        }
+        var inner = outter();
+        inner();
+        //result : coding everybody
+        */
+
+        /*
+        function factory_movie(title){ //get_title, set_title로만 title에 접근할 수 있음 //title : 비밀변수
+            return {
+                get_title : function() {
+                    return title;
+                },
+                set_title : function(_title){
+                    title = _title
+                }
+            }
+        }
+        ghost = factory_movie('Ghost in the shell');
+        matrix = factory_movie('Matrix');
+
+        alert(ghost.get_title());
+        alert(matrix.get_title()); 
+        //여기까지 result : Ghost in the shell
+        //result 2 : Matrix
+
+        ghost.set_title('공각기동대') //set_title로 공각기동대로 변수 값을 세팅할 수 있음
+
+        alert(ghost.get_title());
+        alert(matrix.get_title());
+        //result : Ghost in the shell
+        //result 2 : Matrix
+        //result 3 : 공각기동대
+        //result 4 : Matrix
+        */
+
+        /*
+        closure : java script가 private한 변수를 설정할 수 있는 메커니즘
+        function factory_movie(title){ 
+            return {
+                get_title : function() {
+                    return title;
+                },
+                set_title : function(_title){
+                    if(typeof _title === 'String'){
+                        title = _title
+                    } else {
+                        alert('제목은 문자열이어야 합니다.');
+                    }
+                }
+            }
+        }
+        ghost = factory_movie('Ghost in the shell');
+        matrix = factory_movie('Matrix');
+
+        ghost.set_title(1) //set_title로 공각기동대로 변수 값을 세팅할 수 있음
+
+        alert(ghost.get_title());
+        alert(matrix.get_title());
+        //result : 제목은 문자열이어야 합니다.
+        //result 2 : Ghost in the shell
+        //result 3 : Matrix
+        */
+
+        /*
+        var arr = []
+        for(var i = 0; i < 5; i++){ //arr 배열이 5번 회전하면서
+            arr[i] = function(){ //이 배열의 원소로 함수를 정의하고 있음
+                return i; //각각의 배열에 저장되어 있는 함수를 호출할 때 함수가 정의되는 시점에서 i 값을 화면에 호출
+            }
+        }
+        for(var index in arr) { //for in 문을 이용하여 배열에 담겨 있는 값들을 꺼낸 다음에
+            console.log(arr[index]()); //함수를 호출하게 되면 위 return i;가 실행되게 되는데 이때 i는 함수가 생성되는 시점에서의 i값이 호출되므로 0~4의 값만 호출 예상
+        }
+        //result : (5) 5
+        //-> '5' 값이 다섯번 호출
+        //이유 : i의 값이 우리가 정의한 함수의 외부 변수가 아니기 때문
+        //다음과 같이 코드를 변경하면 기대한 값이 출력될 것임
+        */
+
+        /*
+        var arr = []
+        for(var i = 0; i < 5; i++){ 
+            arr[i] = function(id){ //외부함수
+                return function(){ //내부함수
+                    return id; 
+                }
+            }(i); //매개변수의 인자값 i //외부함수 즉석 호출
+        }
+        for(var index in arr) { 
+            console.log(arr[index]()); 
+        }
+        //result : 0
+        //result : 1
+        //result : 2
+        //result : 3
+        //result : 4
+        //외부 함수 호출 -> 내부함수의 return 값이 arr[i] 배열에 담기게 됨
+        //-> 매개변수의 인자값으로 i를 주고 -> 외부함수는 id라는 매개변수 가짐 (매개변수는 지역변수와 같은 효과를 냄)
+        //-> for문이 돌 때마다 함수가 실행되면서 id 매개변수의 값으로 i값을 받아서 함수 내부로 전달
+        //-> 전달과 동시에 내부함수를 return -> 내부함수는 외부함수의 지역변수인 id를 쓰고 있음
+        // # 외부함수의 지역변수가 내부함수에 접근할 수 있음 -> 함수가 만들어지는 시점에서의 i값을 외부함수가 지역변수로 id를 가지고 있었기 때문에 외부함수에 내부함수를 호출해주게 되면 지역변수인 id값을 return : 0~4까지 호출
+        */
+
+    </script>
+
+</body>
+
+</html>
